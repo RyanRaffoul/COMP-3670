@@ -24,10 +24,10 @@ public class JobCreatorServer
 				new JobCreatorServerThread(socket).start();
 			}
 			
-    	} catch (UnknownHostException ex) {
-    		System.out.println("Server not found: " + ex.getMessage());
-    	} catch (IOException ex) {
-    		System.out.println("I/O error: " + ex.getMessage());
-    	}		
+    		} catch (UnknownHostException ex) {
+    			System.out.println("Server not found: " + ex.getMessage());
+    		} catch (IOException ex) {
+    			System.out.println("I/O error: " + ex.getMessage());
+    		}		
 	}
 }
