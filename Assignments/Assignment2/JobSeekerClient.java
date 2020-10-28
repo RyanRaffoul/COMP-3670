@@ -33,11 +33,11 @@ public class JobSeekerClient
 			// check if job is wanted
 			System.out.println("Do you want to accept this addition job from the Job Creator? (yes/no)");
 			start = sc.next();
+			pw.println(start); // send equation is wanted to Job Creator
 			
 			// if wanted
 			if(start.equals("yes")) {
-				do {
-					pw.println(start); // send equation is wanted to Job Creator
+				do {	
 					
 					// parse integers from the Job Creator
 					int a = 0;
@@ -76,11 +76,11 @@ public class JobSeekerClient
 
 			socket.close(); // close connection
 			
-    		} catch (UnknownHostException ex) {
-    			System.out.println("Server not found: " + ex.getMessage());
-    		} catch (IOException ex) {
-    			System.out.println("I/O error: " + ex.getMessage());
-    		}		
+    	} catch (UnknownHostException ex) {
+    		System.out.println("Server not found: " + ex.getMessage());
+    	} catch (IOException ex) {
+    		System.out.println("I/O error: " + ex.getMessage());
+    	}		
 	}
 }
 

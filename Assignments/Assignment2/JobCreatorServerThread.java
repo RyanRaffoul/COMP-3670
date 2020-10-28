@@ -52,13 +52,13 @@ public class JobCreatorServerThread extends Thread
 					pr.println(b);
 					
 					result = br.readLine(); // get result from Job Seeker
-					
+
 					// output result
 					System.out.println("\nCompleted Successfully\nJob Seeker says " +a + " + " +b + " = " +result + "\n");
 					
 					// check for another
 					option = br.readLine();
-					
+
 					// if another
 					if(option.equals("yes")) {
 						// get from user if to continue
