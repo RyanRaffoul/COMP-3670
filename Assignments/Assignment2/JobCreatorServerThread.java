@@ -1,4 +1,9 @@
-// Put Group and Assignment info here
+// // Assignment 2: Job Creator Server Thread
+// Ryan Raffoul
+// JobCreatorServerThread.java
+// This class simply communicates with the Job Seeker to complete the task and terminate the connection
+
+// libraries used
 import java.io.*;
 import java.util.*;
 import java.net.*;
