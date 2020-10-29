@@ -1,4 +1,9 @@
-// Put Group and Assignment info here
+// Assignment 2: Job Seeker Client
+// Ryan Raffoul
+// JobSeekerClient.java
+// This class simply connects to a Job Creator and communicates with it to complete the task and terminate the connection
+
+// libraries used
 import java.io.*;
 import java.util.*;
 import java.net.*;
