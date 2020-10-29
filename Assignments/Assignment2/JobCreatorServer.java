@@ -1,4 +1,7 @@
-// Put Group and Assignment info here later
+// Assignment 2: Job Creator Server
+// Ryan Raffoul
+// JobCreatorServer.java
+// This class simply connects to a Job Seeker and sends to the Job Creator thread
 
 // libraries used
 import java.io.*;
