@@ -81,11 +81,11 @@ public class JobSeekerClient
 
 			socket.close(); // close connection
 			
-    	} catch (UnknownHostException ex) {
-    		System.out.println("Server not found: " + ex.getMessage());
-    	} catch (IOException ex) {
-    		System.out.println("I/O error: " + ex.getMessage());
-    	}		
+    		} catch (UnknownHostException ex) {
+    			System.out.println("Server not found: " + ex.getMessage());
+    		} catch (IOException ex) {
+    			System.out.println("I/O error: " + ex.getMessage());
+    		}		
 	}
 }
 
