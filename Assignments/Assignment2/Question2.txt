@@ -1,1 +1,21 @@
-
+Q2) A new application layer protocol is needed for this network application instead of using existing standard protocols because this application has different
+    requirements that are best suited using a new application layer protocol. The main reasons are:
+    
+    - Not using the GET/PUT style of HTTP so it doesn't make sense, it is also limited, and if it was used alot would have to be changed to fit needs.
+    - Using SMTP would not make sense as this is not a mail application so mail servers and this is type of communication really doesn't make sense.
+    - Using WebSocket also wouldn't make sense for the same reason as HTTP although WebSocket would have been the next best option.
+    - Other standard protocols such as IMAP or POP3 also don't make sense for the reasons above.
+    - The communication semantics of a Job Seeker connecting to a Job Creator made the most sense for a new protocol although some standard protocols could
+      handle this, they would have to be modified alot to fit our needs.
+    - The communication pattern of a Server/Client with one-to-one pointed towards using a new protocol.
+    - The cost and time to modify a standard protocol didn't make sense as the work for this would be the same as creating a new one, so creating a new one makes more sense.
+    - Our application is very iteractive with virtually no down-time when transferring messages because we created our own protocol.
+    - Although others include persistent connection, we thought making our own protocol would make the persistent connection more reliable.
+    - Extensibility is better with the new application layer protocol.
+    - Used Java Sockets but could have used a Binary Protocol which would've been more efficient so a new application layer protocol gives you the option to do this.
+    - Command/Control of our communication rules most pointed to a new application protocol.
+    - No boundaries or limitations.
+    - Better protection for files.
+    - Interactive development.
+    - Work on any platform.
+    - Specific requirements so using a new protocol makes sense to give the freedom to have many solutions to solve and not just a few.
