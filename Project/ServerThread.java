@@ -7,7 +7,7 @@ public class ServerThread extends Thread
 	private Socket socket; // used for socket
 	
 	// default constructor
-	public JobCreatorServerThread(Socket socket)
+	public ServerThread(Socket socket)
 	{
 		this.socket = socket;
 	}
