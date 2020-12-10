@@ -215,6 +215,8 @@ public class ServerThread extends Thread
 			}catch(Exception e) {
 			}
 		}
+		
+		return a;
 	}
 	
     public String getExtension(String hostname) 
