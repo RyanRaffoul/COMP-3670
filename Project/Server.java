@@ -13,7 +13,10 @@ public class JobCreatorServer
 		
 			System.out.println("This is a Network Discovery Tool\n");
 			System.out.println("Server is available at Port " +port + " looking for a Client to get a Hostname (Not IP Address) do the following: ")
-			System.out.println("")
+			System.out.println("Do a WHOIS Lookup for Hostnames that qualify");
+			System.out.println("Find all IP Addresses for this Hostname");
+			System.out.println("For all IP Addresses found: Check if the IP is reachable and find all Open Ports\n");
+		
 			while(true) {
 				// accept and send
 				Socket socket = serverSocket.accept();
