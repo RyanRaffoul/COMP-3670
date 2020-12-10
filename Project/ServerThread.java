@@ -46,7 +46,7 @@ public class ServerThread extends Thread
 			boolean isReachable = false;
 			String outputReach = "";
 			
-			ArrayList<String> openPorts;
+			ArrayList<int> openPorts;
 			int portSize = 0;
 			String portOutput = "";
 			
@@ -98,7 +98,8 @@ public class ServerThread extends Thread
 									pr.println("No Open Ports for IP Address " +getIP);
 								}else {
 									for(int n = 0; n < portSize; ++n) {
-										
+										portOutput = " Port # " +openPorts.get(n) + " is Open";
+										pr.println(portOutput);
 									}
 								}
 							}else {
@@ -152,7 +153,7 @@ public class ServerThread extends Thread
 		return true;
 	}
 	
-	public ArrayList<String> findOpenPorts()
+	public ArrayList<int> findOpenPorts()
 	{
 		
 	}
