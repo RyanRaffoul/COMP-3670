@@ -1,7 +1,14 @@
+// COMP-3670 Final Project Network Discovery Tool Server Thread
+// ServerThread.java
+// This class gets a hostname and does what was explained in Server.java output
+
+// libraries used
 import java.io.*;
 import java.util.*;
 import java.net.*;
 
+// ServerThread: class to commmunicate with the client to complete task
+// ServerThread has a socket to connect to the Client
 public class ServerThread extends Thread
 { 
 	private Socket socket; // used for socket
@@ -11,7 +18,9 @@ public class ServerThread extends Thread
 	{
 		this.socket = socket;
 	}
-	 
+	
+	// run: method to complete all the jobs explained in Server.java output
+	// run recieves the socket and returns nothing
 	public void run()
 	{
 		try {
@@ -31,17 +40,16 @@ public class ServerThread extends Thread
 			
 			start = br.readLine(); // read on if to start
 			
-			String getHostname = "";
-			String extension = "";
-			boolean checkExtensionFormat = false;
+			String getHostname = ""; // used to get hostname from the client
+			String extension = ""; // used to check the hostname extension
+			boolean checkExtensionFormat = false; // used to check if one of the valid extensions
 			
-			ArrayList<String> lookupInfo;
-			int lookupSize = 0;
+			ArrayList<String> lookupInfo; // used to get WHOIS lookup info
+			int lookupSize = 0; // used to get number of info
 			
-			int numIpAddresses;
-			ArrayList<String> ipAddresses;
-			String getIP = "";
-			int ipAddressesSize = 0;
+			ArrayList<String> ipAddresses; // used to get all IP Addresses
+			String getIP = ""; // used to loop through all IPs
+			int ipAddressesSize = 0; // used to get number of IP Addresses for Host name
 			int pn = 0;
 			
 			boolean isReachable = false;

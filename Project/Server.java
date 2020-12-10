@@ -1,4 +1,4 @@
-// COMP-3670 Final Project Network Discovery Tool
+// COMP-3670 Final Project Network Discovery Tool Server
 // Server.java
 // This class connects to a Client and sends connection to the Server Thread
 // to allow for Multithreading
