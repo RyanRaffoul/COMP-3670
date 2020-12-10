@@ -81,4 +81,16 @@ public class ServerThread extends Thread
 	{
 		
 	}
+	
+    private static String getFileExtension(String hostname) 
+    {
+    	String result = "";
+    	
+        if(hostname.lastIndexOf(".") != -1 && hostname.lastIndexOf(".") != 0) {
+        	result = hostname.substring(hostname.lastIndexOf(".")+1);
+        	return result;
+        }else {
+        	return result;
+        }
+    }
 }
