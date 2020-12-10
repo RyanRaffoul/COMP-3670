@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.net.*;
 
-public class JobCreatorServer
+public class Server
 {
 	public static void main(String[] args)
 	{
