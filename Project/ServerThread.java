@@ -259,7 +259,7 @@ public class ServerThread extends Thread
     	String result = ""; // used to store extension
     	
     	// used to check if an .extension is present and get last occurence
-        if(hostname.lastIndexOf(".") != -1 && hostname.lastIndexOf(".") != 0) {\
+        if(hostname.lastIndexOf(".") != -1 && hostname.lastIndexOf(".") != 0) {
         	// store and return
         	result = hostname.substring(hostname.lastIndexOf(".")+1);
         	return result;
