@@ -60,6 +60,7 @@ public class ServerThread extends Thread
 						lookupInfo.add(notWhoIs)
 					}
 					
+					
 					// check for another
 					option = br.readLine();
 
@@ -121,6 +122,17 @@ public class ServerThread extends Thread
     
     public boolean checkExtension(String e)
     {
+    	String[] extensions = {"com", "ca", "net", "org", "uk", "us", "cn", "edu"};
+    	int n = 8;
+    	boolean check = false;
     	
+    	for(int i = 0; i < n; ++i ) {
+    		if(e.equalsIgnoreCase(extensions[i])) {
+    			check = true;
+    			break;
+    		}
+    	}
+    	
+    	return check;
     }
 }
