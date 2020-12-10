@@ -214,7 +214,7 @@ public class ServerThread extends Thread
 	}
 	
 	// checkIfReachable: check if an IP Address is reachable by sending a ping request
-	// Recieves a IP Address and returns true if it is reachable or false if it is not
+	// Recieves a IP Address and Returns true if it is reachable or false if it is not
 	public boolean checkIfReachable(String ip)
 	{
 		try {
@@ -249,28 +249,34 @@ public class ServerThread extends Thread
 			}catch(Exception e) {
 			}
 		}
-		
 		return a;
 	}
 	
+	// getExtension: get the Hostname extension
+	// Receives a hostname and Returns the extension
     public String getExtension(String hostname) 
     {
-    	String result = "";
+    	String result = ""; // used to store extension
     	
-        if(hostname.lastIndexOf(".") != -1 && hostname.lastIndexOf(".") != 0) {
+    	// used to check if an .extension is present and get last occurence
+        if(hostname.lastIndexOf(".") != -1 && hostname.lastIndexOf(".") != 0) {\
+        	// store and return
         	result = hostname.substring(hostname.lastIndexOf(".")+1);
         	return result;
         }else {
-        	return result;
+        	return result; // if no extension
         }
     }
     
+    // checkExtension: get an extension and check if one of the valid extensions
+    // Receieves a extension and Returns if it is one of the valid extensions
     public boolean checkExtension(String e)
     {
-    	String[] extensions = {"com", "ca", "net", "org", "uk", "us", "cn", "edu"};
-    	int n = 8;
-    	boolean check = false;
+    	String[] extensions = {"com", "ca", "net", "org", "uk", "us", "cn", "edu"}; // all the valid extensions
+    	int n = 8; // array size
+    	boolean check = false; // used to check if one of the valid extensions
     	
+    	// loop through and check if one of the valid hostname extensions.
     	for(int i = 0; i < n; ++i ) {
     		if(e.equalsIgnoreCase(extensions[i])) {
     			check = true;
