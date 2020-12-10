@@ -75,7 +75,7 @@ public class ServerThread extends Thread
 	
 	public boolean checkIfReachable()
 	{
-		
+		return true;
 	}
 	public void findOpenPorts()
 	{
