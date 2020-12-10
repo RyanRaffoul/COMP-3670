@@ -60,7 +60,7 @@ public class ServerThread extends Thread
 					
 					// WHOIS LOOKUP
 					if(checkExtensionFormat) {
-						lookupInfo = WhoIsLookup();
+						lookupInfo = WhoIsLookup(getHostname);
 						lookupSize = lookupInfo.size();
 						for(int i = 0; i < lookupSize; ++i) {
 							pr.println(lookupInfo.get(i));
@@ -138,8 +138,10 @@ public class ServerThread extends Thread
 		}
 	}
 	
-	public ArrayList<String> WhoIsLookup()
+	public ArrayList<String> WhoIsLookup(String hostname)
 	{
+		ArrayList<String> a = new ArrayList<String>();
+		
 		
 	}
 	
