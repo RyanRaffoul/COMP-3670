@@ -187,13 +187,16 @@ public class ServerThread extends Thread
 	
 	public boolean checkIfReachable(String ip)
 	{
-		InetAddress inet = InetAddress.getByName(ip);
 		try {
+			InetAddress inet = InetAddress.getByName(ip);
 			if(inet.isReachable(5000)) {
 				return true;
 			}else {
 				return false;
 			}
+		}catch(Exception e) {
+			System.out.println("IP NOT FOUND");
+			return false;
 		}
 	}
 	
