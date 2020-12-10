@@ -1,7 +1,15 @@
+// COMP-3670 Final Project Network Discovery Tool
+// Server.java
+// This class connects to a Client and sends connection to the Server Thread
+// to allow for Multithreading
+
+// libraries used
 import java.io.*;
 import java.util.*;
 import java.net.*;
 
+// Server: class to establish the connection with the Client
+// Server has a port number for connections
 public class Server
 {
 	public static void main(String[] args)
@@ -9,6 +17,7 @@ public class Server
 		// port number, can change
 		int port = 8080;
 		
+		// establish connection
 		try(ServerSocket serverSocket = new ServerSocket(port)){
 		
 			// outputs to display what the Server does
