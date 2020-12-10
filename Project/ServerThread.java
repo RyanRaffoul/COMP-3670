@@ -147,7 +147,7 @@ public class ServerThread extends Thread
 		int port = 43;
 		
 		try(Socket s = new Socket(hostname1,port)){
-			OutputSteam o = s.getOutputStream();
+			OutputStream o = s.getOutputStream();
 			PrintWriter p = new PrintWriter(o, true);
 			p.println(hostname);
 			
@@ -168,7 +168,7 @@ public class ServerThread extends Thread
 		
 	}
 	
-	public ArrayList<String> getIPAddress()
+	public ArrayList<String> getIPAddresses()
 	{
 		
 	}
