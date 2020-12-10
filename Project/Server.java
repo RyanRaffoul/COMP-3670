@@ -22,7 +22,7 @@ public class JobCreatorServer
 				// accept and send to the Server Thread
 				Socket socket = serverSocket.accept();
 				System.out.println("\nConnected to a Client\n");
-				new JobCreatorServerThread(socket).start();
+				new ServerThread(socket).start();
 			}
 			
     	} catch (UnknownHostException ex) {
