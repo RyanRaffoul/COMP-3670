@@ -182,10 +182,15 @@ public class ServerThread extends Thread
 			InputStream i = s.getInputStream();
 			BufferedReader r = new BufferedReader(new InputStreamReader(i));
 			
-			// add all information to array list
+			// add all information to array list and only store first 20 lines as output can be very long
 			String lines = "";
+			int count = 0;
 			while((lines = r.readLine()) != null) {
 				a.add(lines);
+				++count;
+				if(count < 20) {
+					break;
+				}
 			}
 		}catch(UnknownHostException e) {
 			System.out.println("Server not found: " + e.getMessage());
@@ -272,8 +277,8 @@ public class ServerThread extends Thread
     // Receieves a extension and Returns if it is one of the valid extensions
     public boolean checkExtension(String e)
     {
-    	String[] extensions = {"com", "ca", "net", "org", "uk", "us", "cn", "edu"}; // all the valid extensions
-    	int n = 8; // array size
+    	String[] extensions = {"com", "net", "edu"}; // all the valid extensions for a WHOISLOOKUP
+    	int n = 3; // array size
     	boolean check = false; // used to check if one of the valid extensions
     	
     	// loop through and check if one of the valid hostname extensions.
