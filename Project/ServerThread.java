@@ -54,10 +54,12 @@ public class ServerThread extends Thread
 					checkExtensionFormat = checkExtension(extension);
 					
 					if(checkExtensionFormat) {
-						// DO WHOIS LOOKUP HERE
+						WhoIsLookup(lookupInfo);
+						
 					}else {
 						String notWhoIs = "Did not do a WHOIS lookup because of incompatible extension";
-						lookupInfo.add(notWhoIs)
+						lookupInfo.add(notWhoIs);
+						pr.println(lookupInfo);
 					}
 					
 					
