@@ -48,17 +48,17 @@ public class ServerThread extends Thread
 			// if accepted
 			if(start.equals("yes")) {
 				do {
-					ipAddress = new ArrayList<String>();
-					isReachable = new ArrayList<String>();
-					openPorts = isReachable;
 					
 					getHostname = br.readLine();
 					extension = getExtension(getHostname);
 					checkExtensionFormat = checkExtension(extension);
 					
 					if(checkExtensionFormat) {
-						WhoIsLookup(lookupInfo);
-						for(int i = 0; i < lookupSize; ++)
+						lookupInfo = WhoIsLookup(lookupInfo);
+						lookupSize = lookupInfo.size();
+						for(int i = 0; i < lookupSize; ++i) {
+							pr.println(lookupInfo.get(i));
+						}
 					}else {
 						String notWhoIs = "Did not do a WHOIS lookup because of incompatible extension";
 						pr.println(lookupSize);
@@ -94,12 +94,12 @@ public class ServerThread extends Thread
 		}
 	}
 	
-	public void WhoIsLookup(ArrayList<String> a)
+	public ArrayList<String> WhoIsLookup(ArrayList<String> a)
 	{
 		
 	}
 	
-	public void getIPAddress(ArrayList<String> a)
+	public ArrayList<String> getIPAddress(ArrayList<String> a)
 	{
 		
 	}
@@ -108,7 +108,8 @@ public class ServerThread extends Thread
 	{
 		return true;
 	}
-	public void findOpenPorts(ArrayList<String> a)
+	
+	public ArrayList<String> findOpenPorts(ArrayList<String> a)
 	{
 		
 	}
