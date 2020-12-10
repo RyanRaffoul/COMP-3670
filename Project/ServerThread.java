@@ -94,22 +94,22 @@ public class ServerThread extends Thread
 		}
 	}
 	
-	public ArrayList<String> WhoIsLookup(ArrayList<String> a)
+	public ArrayList<String> WhoIsLookup()
 	{
 		
 	}
 	
-	public ArrayList<String> getIPAddress(ArrayList<String> a)
+	public ArrayList<String> getIPAddress()
 	{
 		
 	}
 	
-	public boolean checkIfReachable(ArrayList<String> a)
+	public boolean checkIfReachable()
 	{
 		return true;
 	}
 	
-	public ArrayList<String> findOpenPorts(ArrayList<String> a)
+	public ArrayList<String> findOpenPorts()
 	{
 		
 	}
