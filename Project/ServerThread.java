@@ -41,7 +41,7 @@ public class ServerThread extends Thread
 			int numIpAddresses;
 			ArrayList<String> ipAddresses;
 			String getIP = "";
-			int ipAddressSize = 0;
+			int ipAddressesSize = 0;
 			int pn = 0;
 			
 			boolean isReachable = false;
