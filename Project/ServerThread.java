@@ -31,9 +31,48 @@ public class ServerThread extends Thread
 			
 			start = br.readLine(); // read on if to start
 			
+			String getHostname = "";
+			 whoIsLookup;
+			int numIpAddresses;
+			String ipAddress;
+			String isReachable;
+			String[] openPorts;
+			
 			// if accepted
 			if(start.equals("yes")) {
 				do {
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 					
 					// check for another
 					option = br.readLine();
