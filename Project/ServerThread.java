@@ -159,7 +159,7 @@ public class ServerThread extends Thread
 		}catch(UnknownHostException e) {
 			System.out.println("Server not found: " + e.getMessage());
 		}catch(IOException e) {
-			System.out.println("I/O error: " + e.getMessage())
+			System.out.println("I/O error: " + e.getMessage());
 		}
 		
 		return a;
