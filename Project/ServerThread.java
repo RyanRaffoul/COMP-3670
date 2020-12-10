@@ -47,37 +47,7 @@ public class ServerThread extends Thread
 					isReachable = new ArrayList<String>();
 					openPorts = new ArrayList<String>();
 					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
+					getHostname = br.readLine();
 					
 					
 					// check for another
