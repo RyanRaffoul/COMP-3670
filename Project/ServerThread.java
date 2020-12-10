@@ -56,6 +56,9 @@ public class ServerThread extends Thread
 				do {
 					
 					getHostname = br.readLine();
+					System.out.println("Received " +getHostname + " from the Client");
+					System.out.println("Getting and Sending Data now");
+					
 					extension = getExtension(getHostname);
 					checkExtensionFormat = checkExtension(extension);
 					
@@ -112,6 +115,7 @@ public class ServerThread extends Thread
 							
 						}
 					}
+					System.out.println("Sent all Data to the Client");
 					// check for another
 					option = br.readLine();
 
@@ -183,7 +187,12 @@ public class ServerThread extends Thread
 	
 	public boolean checkIfReachable(String ip)
 	{
-		return true;
+		InetAddress inet = InetAddress.getByName(ip);
+		if(inet.isReachable(5000)) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	public ArrayList<Integer> findOpenPorts(String ip)
