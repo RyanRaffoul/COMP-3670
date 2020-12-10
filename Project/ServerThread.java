@@ -173,7 +173,7 @@ public class ServerThread extends Thread
 		
 	}
 	
-	public boolean checkIfReachable()
+	public boolean checkIfReachable(String ip)
 	{
 		return true;
 	}
