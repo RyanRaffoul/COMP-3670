@@ -74,13 +74,13 @@ public class ServerThread extends Thread
 					
 					ipAddresses = getIPAddresses();
 					ipAddressesSize = ipAddresses.size();
-					pr.println(ipAddressSize);
+					pr.println(ipAddressesSize);
 					
-					if(ipAddressSize == 0) {
+					if(ipAddressesSize == 0) {
 						pr.println("No IP Addresses found");
 					}else{
 						// FIRST PRINT ALL THE IP ADDRESSES
-						for(int i = 0; i < ipAddressSize; ++i) {
+						for(int i = 0; i < ipAddressesSize; ++i) {
 							pr.println(ipAddresses.get(i));
 						}
 						
