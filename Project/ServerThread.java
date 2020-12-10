@@ -168,7 +168,7 @@ public class ServerThread extends Thread
 		
 	}
 	
-	public ArrayList<String> getIPAddresses()
+	public ArrayList<String> getIPAddresses(String hostname)
 	{
 		
 	}
@@ -178,7 +178,7 @@ public class ServerThread extends Thread
 		return true;
 	}
 	
-	public ArrayList<Integer> findOpenPorts()
+	public ArrayList<Integer> findOpenPorts(String ip)
 	{
 		
 	}
