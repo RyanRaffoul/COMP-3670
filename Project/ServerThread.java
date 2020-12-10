@@ -59,7 +59,7 @@ public class ServerThread extends Thread
 					}else {
 						String notWhoIs = "Did not do a WHOIS lookup because of incompatible extension";
 						lookupInfo.add(notWhoIs);
-						pr.println(lookupInfo);
+						pr.println(lookupI);
 					}
 					
 					
