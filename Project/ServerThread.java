@@ -163,14 +163,22 @@ public class ServerThread extends Thread
 		}catch(IOException e) {
 			System.out.println("I/O error: " + e.getMessage());
 		}
-		
 		return a;
 		
 	}
 	
 	public ArrayList<String> getIPAddresses(String hostname)
 	{
-		
+		ArrayList<String> ipAdds = new ArrayList<String>();
+		try {
+			InetAddress[] hosts = InetAddress.getAllByName(hostname);
+			for(InetAddress host: hosts) {
+				ipAdds.add(host.getHostAddress());
+			}
+		}catch(UnknownHostException e) {
+			System.out.println("Server not found: " +e.getMessage());
+		}
+		return ipAdds;
 	}
 	
 	public boolean checkIfReachable(String ip)
