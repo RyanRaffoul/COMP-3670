@@ -32,6 +32,7 @@ public class ServerThread extends Thread
 			start = br.readLine(); // read on if to start
 			
 			String getHostname = "";
+			String extension = "";
 			
 			ArrayList<String> lookupInfo;
 			int numIpAddresses;
@@ -48,6 +49,7 @@ public class ServerThread extends Thread
 					openPorts = new ArrayList<String>();
 					
 					getHostname = br.readLine();
+					extension = getExtension(getHostname);
 					
 					
 					// check for another
@@ -97,7 +99,7 @@ public class ServerThread extends Thread
 		
 	}
 	
-    private static String getFileExtension(String hostname) 
+    public String getExtension(String hostname) 
     {
     	String result = "";
     	
