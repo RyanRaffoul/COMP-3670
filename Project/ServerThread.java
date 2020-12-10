@@ -36,18 +36,21 @@ public class ServerThread extends Thread
 			boolean checkExtensionFormat = false;
 			
 			ArrayList<String> lookupInfo;
+			int lookupSize = 0;
+			
 			int numIpAddresses;
 			ArrayList<String> ipAddress;
+			
 			ArrayList<String> isReachable;
+			
 			ArrayList<String> openPorts;
 			
 			// if accepted
 			if(start.equals("yes")) {
 				do {
-					lookupInfo = new ArrayList<String>();
 					ipAddress = new ArrayList<String>();
 					isReachable = new ArrayList<String>();
-					openPorts = new ArrayList<String>();
+					openPorts = isReachable;
 					
 					getHostname = br.readLine();
 					extension = getExtension(getHostname);
@@ -55,11 +58,11 @@ public class ServerThread extends Thread
 					
 					if(checkExtensionFormat) {
 						WhoIsLookup(lookupInfo);
-						
+						for(int i = 0; i < lookupSize; ++)
 					}else {
 						String notWhoIs = "Did not do a WHOIS lookup because of incompatible extension";
-						lookupInfo.add(notWhoIs);
-						pr.println(lookupI);
+						pr.println(lookupSize);
+						pr.println(notWhoIs);
 					}
 					
 					
