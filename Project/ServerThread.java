@@ -39,7 +39,7 @@ public class ServerThread extends Thread
 			int lookupSize = 0;
 			
 			int numIpAddresses;
-			ArrayList<String> ipAddress;
+			ArrayList<String> ipAddresses;
 			String getIP = "";
 			int ipAddressSize = 0;
 			int pn = 0;
@@ -99,7 +99,7 @@ public class ServerThread extends Thread
 									pr.println("No Open Ports for IP Address " +getIP);
 								}else {
 									for(int n = 0; n < portSize; ++n) {
-										pn = openPorts.get(n)
+										pn = openPorts.get(n);
 										portOutput = " Port # " +pn + " is Open";
 										pr.println(portOutput);
 									}
