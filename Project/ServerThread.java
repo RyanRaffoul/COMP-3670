@@ -73,7 +73,7 @@ public class ServerThread extends Thread
 					}
 					
 					ipAddresses = getIPAddresses();
-					ipAddressSize = ipAddresses.size();
+					ipAddressesSize = ipAddresses.size();
 					pr.println(ipAddressSize);
 					
 					if(ipAddressSize == 0) {
