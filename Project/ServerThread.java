@@ -32,15 +32,21 @@ public class ServerThread extends Thread
 			start = br.readLine(); // read on if to start
 			
 			String getHostname = "";
-			 whoIsLookup;
+			
+			ArrayList<String> lookupInfo;
 			int numIpAddresses;
-			String ipAddress;
-			String isReachable;
-			String[] openPorts;
+			ArrayList<String> ipAddress;
+			ArrayList<String> isReachable;
+			ArrayList<String> openPorts;
 			
 			// if accepted
 			if(start.equals("yes")) {
 				do {
+					lookupInfo = new ArrayList<String>();
+					ipAddress = new ArrayList<String>();
+					isReachable = new ArrayList<String>();
+					openPorts = new ArrayList<String>();
+					
 					
 					
 					
@@ -102,21 +108,21 @@ public class ServerThread extends Thread
 		}
 	}
 	
-	public void WhoIsLookup()
+	public void WhoIsLookup(ArrayList<String> a)
 	{
 		
 	}
 	
-	public void getIPAddress()
+	public void getIPAddress(ArrayList<String> a)
 	{
 		
 	}
 	
-	public boolean checkIfReachable()
+	public boolean checkIfReachable(ArrayList<String> a)
 	{
 		return true;
 	}
-	public void findOpenPorts()
+	public void findOpenPorts(ArrayList<String> a)
 	{
 		
 	}
