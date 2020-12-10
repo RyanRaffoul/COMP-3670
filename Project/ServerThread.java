@@ -40,8 +40,11 @@ public class ServerThread extends Thread
 			
 			int numIpAddresses;
 			ArrayList<String> ipAddress;
+			String getIP = "";
+			int ipAddressSize = 0;
 			
-			ArrayList<String> isReachable;
+			boolean isReachable = false;
+			String outputReach = "";
 			
 			ArrayList<String> openPorts;
 			
@@ -53,8 +56,9 @@ public class ServerThread extends Thread
 					extension = getExtension(getHostname);
 					checkExtensionFormat = checkExtension(extension);
 					
+					// WHOIS LOOKUP
 					if(checkExtensionFormat) {
-						lookupInfo = WhoIsLookup(lookupInfo);
+						lookupInfo = WhoIsLookup();
 						lookupSize = lookupInfo.size();
 						for(int i = 0; i < lookupSize; ++i) {
 							pr.println(lookupInfo.get(i));
@@ -65,7 +69,28 @@ public class ServerThread extends Thread
 						pr.println(notWhoIs);
 					}
 					
+					ipAddresses = getIPAddresses();
+					ipAddressSize = ipAddresses.size();
+					pr.println(ipAddressSize);
 					
+					if(ipAddressSize == 0) {
+						pr.println("No IP Addresses found");
+					}else{
+						// FIRST PRINT ALL THE IP ADDRESSES
+						for(int i = 0; i < ipAddressSize; ++i) {
+							pr.println(ipAddresses.get(i));
+						}
+						
+						for(int i = 0; i < ipAddressesSize; ++i) {
+							getIP = ipAddresses.get(i);
+							isReachable = checkIfReachable(getIP);
+							if(isReachable) {
+								
+							}else {
+								
+							}
+						}
+					}
 					// check for another
 					option = br.readLine();
 
