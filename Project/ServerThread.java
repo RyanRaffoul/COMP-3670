@@ -283,7 +283,6 @@ public class ServerThread extends Thread
     			break;
     		}
     	}
-    	
     	return check;
     }
 }
