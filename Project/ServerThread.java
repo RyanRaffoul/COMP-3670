@@ -72,7 +72,7 @@ public class ServerThread extends Thread
 						pr.println(notWhoIs);
 					}
 					
-					ipAddresses = getIPAddresses();
+					ipAddresses = getIPAddresses(getHostname);
 					ipAddressesSize = ipAddresses.size();
 					pr.println(ipAddressesSize);
 					
@@ -92,7 +92,7 @@ public class ServerThread extends Thread
 								outputReach = "IP Address " +getIP + " is Reachable";
 								pr.println(outputReach);
 								
-								openPorts = findOpenPorts();
+								openPorts = findOpenPorts(getIP);
 								portSize = openPorts.size();
 								pr.println(portSize);
 								if(portSize == 0) {
