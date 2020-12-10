@@ -33,6 +33,7 @@ public class ServerThread extends Thread
 			
 			String getHostname = "";
 			String extension = "";
+			boolean checkExtensionFormat = false;
 			
 			ArrayList<String> lookupInfo;
 			int numIpAddresses;
@@ -50,7 +51,14 @@ public class ServerThread extends Thread
 					
 					getHostname = br.readLine();
 					extension = getExtension(getHostname);
+					checkExtensionFormat = checkExtension(extension);
 					
+					if(checkExtensionFormat) {
+						// DO WHOIS LOOKUP HERE
+					}else {
+						String notWhoIs = "Did not do a WHOIS lookup because of incompatible extension";
+						lookupInfo.add(notWhoIs)
+					}
 					
 					// check for another
 					option = br.readLine();
@@ -109,5 +117,10 @@ public class ServerThread extends Thread
         }else {
         	return result;
         }
+    }
+    
+    public boolean checkExtension(String e)
+    {
+    	
     }
 }
