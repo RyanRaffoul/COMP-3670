@@ -141,7 +141,28 @@ public class ServerThread extends Thread
 	public ArrayList<String> WhoIsLookup(String hostname)
 	{
 		ArrayList<String> a = new ArrayList<String>();
+		String hostname1 = "whois.internic.net";
+		int port = 43;
 		
+		try(Socket s = new Socket(hostname1,port)){
+			OutputSteam o = s.getOutputStream();
+			PrintWriter p = new PrintWriter(o, true);
+			p.println(hostname);
+			
+			InputStream i = s.getInputStream();
+			BufferedReader r = new BufferedReader(new InputStreamReader(i));
+			
+			String lines = "";
+			while((lines = r.readLine()) != null) {
+				a.add(lines);
+			}
+		}catch(UnknownHostException e) {
+			System.out.println("Server not found: " + e.getMessage());
+		}catch(IOException e) {
+			System.out.println("I/O error: " + e.getMessage())
+		}
+		
+		return a;
 		
 	}
 	
