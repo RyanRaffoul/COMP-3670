@@ -203,6 +203,17 @@ public class ServerThread extends Thread
 	public ArrayList<Integer> findOpenPorts(String ip)
 	{
 		ArrayList<Integer> a = new ArrayList<Integer>();
+		
+		for(int port = 1; port <= 65535; ++port) {
+			try {
+				Socket so = new Socket();
+				socket.connect(new InetSocketAddress(ip,port),1000);
+				socket.close();
+				a.add(port);
+			}catch(Exception e) {
+			}
+		}
+		
 		return a;
 	}
 	
