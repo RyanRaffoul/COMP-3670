@@ -130,8 +130,6 @@ public class ServerThread extends Thread
 								outputReach = "IP Address " +getIP + " is not Reachable";
 								pr.println(outputReach);
 							}
-							
-							
 						}
 					}
 					System.out.println("Sent all Data to the Client"); // when done
