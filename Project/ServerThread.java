@@ -141,7 +141,7 @@ public class ServerThread extends Thread
 					// if another
 					if(option.equals("yes")) {
 						// get from user if to continue
-						System.out.println("Client wants another equation");
+						System.out.println("Client wants the Server to do another Network Discovery Job");
 						System.out.println("Would you like to continue with this Client? (yes/no)");
 						cont = sc.next();
 						
@@ -153,7 +153,7 @@ public class ServerThread extends Thread
 				}while(option.equals("yes") && cont.equals("yes")); // check if another iteration is wanted
 				
 			}else {
-				System.out.println("Client has rejected the Host Name Discovery Job and terminated the connection");
+				System.out.println("Client has terminated the connection");
 			}
 			
 			socket.close(); // close connection
@@ -188,7 +188,7 @@ public class ServerThread extends Thread
 			while((lines = r.readLine()) != null) {
 				a.add(lines);
 				++count;
-				if(count < 20) {
+				if(count == 20) {
 					break;
 				}
 			}
