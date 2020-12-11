@@ -24,22 +24,6 @@ public class ServerThread extends Thread
 	public void run()
 	{
 		try {
-			// used for input
-			InputStream input = socket.getInputStream();
-			BufferedReader br = new BufferedReader(new InputStreamReader(input));
-			
-			// used for output
-			OutputStream output = socket.getOutputStream();
-			PrintWriter pr = new PrintWriter(output,true);
-			
-			String option = ""; // used to get input on if to do another Host Name discovery
-			String cont = ""; // used to get input from user on if to continue
-			
-			String start = ""; // used to check if connection accepted
-			Scanner sc = new Scanner(System.in); // used for user input
-			
-			start = br.readLine(); // read on if to start
-			
 			String getHostname = ""; // used to get hostname from the client
 			String extension = ""; // used to check the hostname extension
 			boolean checkExtensionFormat = false; // used to check if one of the valid extensions
@@ -58,6 +42,22 @@ public class ServerThread extends Thread
 			int portSize = 0; // used to get number of Ports that are open for IP Addresses
 			int pn = 0; // used to loop through port numbers
 			String portOutput = ""; // used to output Port is open
+			
+			String option = ""; // used to get input on if to do another Host Name discovery
+			String cont = ""; // used to get input from user on if to continue
+			String start = ""; // used to check if connection accepted			
+			
+			// used for input
+			InputStream input = socket.getInputStream();
+			BufferedReader br = new BufferedReader(new InputStreamReader(input));
+			
+			// used for output
+			OutputStream output = socket.getOutputStream();
+			PrintWriter pr = new PrintWriter(output,true);
+			
+			Scanner sc = new Scanner(System.in); // used for user input
+			
+			start = br.readLine(); // read on if to start
 			
 			// if accepted
 			if(start.equals("yes")) {
