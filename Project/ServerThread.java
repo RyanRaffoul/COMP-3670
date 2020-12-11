@@ -165,6 +165,7 @@ public class ServerThread extends Thread
 	
 	// WhoIsLookup: connect to the WhoIsLookup Server and get all the information about the Hostname
 	// Receives a hostname and Returns all the information in a Array List
+	// WHOISLOOKUP Server is a server that can fetch a bunch of interesting information about any hostname
 	public ArrayList<String> WhoIsLookup(String hostname)
 	{
 		ArrayList<String> a = new ArrayList<String>(); // used to store data
