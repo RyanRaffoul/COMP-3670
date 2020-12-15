@@ -256,8 +256,8 @@ public class ServerThread extends Thread
 		return a;
 	}
 	
-	// getExtension: get the Hostname extension
-	// Receives a hostname and Returns the extension
+    // getExtension: get the Hostname extension
+    // Receives a hostname and Returns the extension
     public String getExtension(String hostname) 
     {
     	String result = ""; // used to store extension
