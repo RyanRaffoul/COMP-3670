@@ -23,6 +23,10 @@ public class Client {
 		String hostName = "";
 		String option = "";
 		String cont = "";
+		String fileName = "";
+		String reachable = "";
+		int methodSize;
+		int portSize;
 		
 		//Scanner to get user input
 		Scanner sc = new Scanner(System.in);
@@ -49,7 +53,9 @@ public class Client {
 			if(start.equals("yes"))
 			{
 				do {
-					
+				
+				//Variable for creating and writing into a text file
+				PrintWriter writer = new PrintWriter("DiscoveryData.txt");
 				
 				//Ask user for hostname and send it to the server
 				System.out.println("\nConnected, Enter Hostname for server to:");
@@ -59,6 +65,90 @@ public class Client {
 				hostName = sc.next();
 				pw.println(hostName);
 				
+				System.out.println("The network data will be stored into the text file: DiscoveryData.txt");
+				
+				//WhoisCheck
+				methodSize = Integer.parseInt(br.readLine());
+				
+				if(methodSize > 0)
+				{
+					//Write all the data from the WHOIS lookup into the text file
+					writer.println("WHOIS Lookup:");
+					for(int i = 0; i < methodSize; ++i) {
+						writer.println(br.readLine());
+					}
+					
+					writer.println("-");
+					writer.println("-");
+					writer.println("-");
+				}
+				else
+				{
+					//WHOIS lookup failed
+					System.out.println("Error Server Message: " + br.readLine());
+					writer.println("Error when attempting WHOIS lookup");
+				}
+				
+				//IPAddress Check
+				methodSize = Integer.parseInt(br.readLine());
+				if(methodSize > 0)
+				{
+					//Write all IP Addresses into the text file
+					writer.println("All IP Addresses found:");
+					for(int i = 0; i < methodSize; ++i) {
+						writer.println(br.readLine());
+					}
+					
+					writer.println("-");
+					writer.println("-");
+					writer.println("-");
+					
+					//Loop for reading if Ip's are reachable and writes into a text file
+					//If they are also reads the open ports and writes them into a text file
+					for(int i = 0; i < methodSize; ++i) {
+						
+						reachable = br.readLine();
+						
+						if(reachable.contains("is not Reachable"))
+						{
+							writer.println(reachable);
+						}
+						
+						else
+						{
+							writer.println(reachable);
+							portSize = Integer.parseInt(br.readLine());
+							if(portSize > 0)
+							{
+								for(int n = 0; n < portSize; ++n)
+								{
+									writer.println(br.readLine());
+								}
+							}
+							
+							else
+							{
+								writer.println(br.readLine());
+							}
+						}
+						
+					}
+					
+					writer.println("-");
+					writer.println("-");
+					writer.println("-");
+					
+				}
+				else
+				{
+					System.out.println("Error Server Message: " + br.readLine());
+				}
+				
+				
+				
+				
+				//Close the file writer
+				writer.close();
 				
 				
 				//Ask if the user would like to complete another iteration of data collection
