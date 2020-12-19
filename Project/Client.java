@@ -63,6 +63,7 @@ public class Client {
 				System.out.println("1 - Perform a WHOIS Lookup for Hostnames that qualify");
 				System.out.println("2 - Find all IP Addresses for this Hostname");
 				System.out.println("3 - For all IP Addresses found: Check if the IP is reachable and find all Open Ports");
+				System.out.println("Only Enter Hostname and extension (ex. do not write wwww.google.com, write only google.com)");
 				hostName = sc.next();
 				pw.println(hostName);
 				
