@@ -1,17 +1,16 @@
-// COMP-3670 Final Project Network Discovery Tool Client
+// COMP-3670 Final Project Network Discovery Tool Client	
 // Client.java
 // This class connects to a Server and receives data
 // and outputs the information to a text file
 
-
+//Needed Libraries for Project
 import java.io.*;
 import java.net.*;
 import java.util.*;
 
-
-
 public class Client {
 
+	//Main method 
 	public static void main(String [] args)
 	{
 		//IP and Port variables to connect to the server
@@ -25,6 +24,8 @@ public class Client {
 		String cont = "";
 		String fileName = "";
 		String reachable = "";
+		String whoIsError = "";
+		
 		int methodSize;
 		int portSize;
 		
@@ -35,7 +36,7 @@ public class Client {
 		System.out.println("Enter ip of server you would like to connect to: ");
 		ip = sc.next();
 		
-		
+		//Connection to the server
 		try(Socket socket = new Socket(ip, port))
 		{
 			//Variables for reading and writing from/to the server
@@ -65,9 +66,10 @@ public class Client {
 				hostName = sc.next();
 				pw.println(hostName);
 				
+				//Aware user how the data will be stored
 				System.out.println("The network data will be stored into the text file: DiscoveryData.txt");
 				
-				//WhoisCheck
+				//Check if WHOIS lookup succeeded
 				methodSize = Integer.parseInt(br.readLine());
 				
 				if(methodSize > 0)
@@ -78,6 +80,7 @@ public class Client {
 						writer.println(br.readLine());
 					}
 					
+					//Separators to organize text file
 					writer.println("-");
 					writer.println("-");
 					writer.println("-");
@@ -85,8 +88,14 @@ public class Client {
 				else
 				{
 					//WHOIS lookup failed
-					System.out.println("Error Server Message: " + br.readLine());
-					writer.println("Error when attempting WHOIS lookup");
+					whoIsError = br.readLine();
+					System.out.println("Error Server Message: " + whoIsError);
+					writer.println(whoIsError);
+					
+					//Separators to organize text file
+					writer.println("-");
+					writer.println("-");
+					writer.println("-");
 				}
 				
 				//IPAddress Check
@@ -99,6 +108,7 @@ public class Client {
 						writer.println(br.readLine());
 					}
 					
+					//Separators to organize text file
 					writer.println("-");
 					writer.println("-");
 					writer.println("-");
@@ -109,11 +119,13 @@ public class Client {
 						
 						reachable = br.readLine();
 						
+						//If Ip is not reachable write it into the text file
 						if(reachable.contains("is not Reachable"))
 						{
 							writer.println(reachable);
 						}
 						
+						//If Ip is reachable, check for open ports and write all data into the text file
 						else
 						{
 							writer.println(reachable);
@@ -134,22 +146,22 @@ public class Client {
 						
 					}
 					
+					//Separators to organize text file
 					writer.println("-");
 					writer.println("-");
 					writer.println("-");
 					
 				}
+				
+				//If no Ip addresses found
 				else
 				{
 					System.out.println("Error Server Message: " + br.readLine());
 				}
 				
 				
-				
-				
 				//Close the file writer
 				writer.close();
-				
 				
 				//Ask if the user would like to complete another iteration of data collection
 				System.out.println("\nWould you like to give the server another HostName? (yes/no)");
@@ -174,6 +186,7 @@ public class Client {
 				pw.println(start);
 			}
 			
+			//Close the connection
 			socket.close();
 		
 		} 
