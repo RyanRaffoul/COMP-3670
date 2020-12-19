@@ -67,6 +67,7 @@ public class Client {
 				hostName = sc.next();
 				pw.println(hostName);
 				
+				writer.println("Network Information For " +hostName + "\n");
 				//Aware user how the data will be stored
 				System.out.println("The network data will be stored into the text file: DiscoveryData.txt");
 				
