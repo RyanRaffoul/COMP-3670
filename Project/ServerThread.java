@@ -76,6 +76,7 @@ public class ServerThread extends Thread
 						// call WHOIS Lookup method and send size and data to the Client
 						lookupInfo = WhoIsLookup(getHostname);
 						lookupSize = lookupInfo.size();
+						pr.println(lookupSize);
 						for(int i = 0; i < lookupSize; ++i) {
 							pr.println(lookupInfo.get(i));
 						}
