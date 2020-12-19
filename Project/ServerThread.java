@@ -248,8 +248,8 @@ public class ServerThread extends Thread
 			try {
 				// check if can connect using port and add those that are open
 				Socket so = new Socket();
-				socket.connect(new InetSocketAddress(ip,port),1000);
-				socket.close();
+				so.connect(new InetSocketAddress(ip,port),1000);
+				so.close();
 				a.add(port);
 			}catch(Exception e) {
 			}
