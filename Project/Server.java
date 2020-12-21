@@ -26,7 +26,7 @@ public class Server
 			System.out.println("Do a WHOIS Lookup for Hostnames that qualify");
 			System.out.println("Find all IP Addresses for this Hostname");
 			System.out.println("For all IP Addresses found: Check if the IP is reachable and find all Open Ports\n");
-		
+			
 			while(true) {
 				// accept and send to the Server Thread
 				Socket socket = serverSocket.accept();
